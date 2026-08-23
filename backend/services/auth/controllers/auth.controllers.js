@@ -5,7 +5,7 @@ import { getAuth }
 import User from "../models/user.model.js";
 import redis from "../../../shared/redis/redis.js";
 import { app } from "../config/firebase.js";
-
+const isProd = process.env.NODE_ENV === "production";
 
 export const login = async (
   req,
