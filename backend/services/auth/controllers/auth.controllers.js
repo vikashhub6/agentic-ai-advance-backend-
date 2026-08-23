@@ -98,9 +98,9 @@ export const login = async (
       {
         httpOnly: true,
 
-        secure: false,
+        secure: isProd,
 
-        sameSite: "lax",
+        sameSite: isProd ? "none" : "lax",
 
         maxAge:
           1000 *
@@ -153,8 +153,8 @@ export const logout =
         "session",
         {
           httpOnly: true,
-          secure: false,
-          sameSite: "lax"
+          secure: isProd,
+          sameSite: isProd ? "none" : "lax"
         }
       );
 
